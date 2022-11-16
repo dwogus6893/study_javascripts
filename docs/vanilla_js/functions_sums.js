@@ -12,3 +12,20 @@ function sum(N){
 
 let arr =  [1,2,3,4,5];
  console.log(sum(arr));
+
+
+ //여기는 for of 반복문 연습
+ let items = [1,2,3,4,5];
+ for(let value of items){
+    console.log(value);
+ }
+
+ function A(N){
+    let sum = 0;
+    for(let B of N){
+        sum += B;
+    }
+    return sum;
+ }
+ let arr2 = [1,2,3,4,5,6]
+ console.log(sum(arr2));
