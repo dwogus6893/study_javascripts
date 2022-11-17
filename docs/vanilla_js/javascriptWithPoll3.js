@@ -1,5 +1,6 @@
 // ====================입력부분=======================================
 let str = "";
+const { setDefaultResultOrder } = require('dns');
 const fs = require('fs'); //파일을 읽어오기 위해 사용
 const { totalmem } = require('os');
 const filepath =
@@ -26,55 +27,64 @@ let example_list =
     {example_uid:"E2",example:"아니다",orders:"2"},
     {example_uid:"E3",example:"보통이다",orders:"3"},
 ];
-//응답항목
+//응답항목 이거 어떻게 써야할지 모름
 let answer_list = 
 [
     { questionUid: "Q1", exampleUid: "E1" },
     { questionUid: "Q1", exampleUid: "E2" },
-    { questionUid: "Q1", exampleUid: "E3" },
+    { questionUid: "Q1", exampleUid: "E3" },//Q1 = 3개
     { questionUid: "Q2", exampleUid: "E1" },
     { questionUid: "Q2", exampleUid: "E2" },
     { questionUid: "Q2", exampleUid: "E3" },
-    { questionUid: "Q2", exampleUid: "E4" },
+    { questionUid: "Q2", exampleUid: "E4" },//Q2 = 4개
     { questionUid: "Q3", exampleUid: "E1" },
-    { questionUid: "Q3", exampleUid: "E2" },
+    { questionUid: "Q3", exampleUid: "E2" },//Q3 = 2개
     { questionUid: "Q4", exampleUid: "E1" },
     { questionUid: "Q4", exampleUid: "E2" },
     { questionUid: "Q4", exampleUid: "E3" },
     { questionUid: "Q4", exampleUid: "E4" },
-    { questionUid: "Q4", exampleUid: "E5" },
+    { questionUid: "Q4", exampleUid: "E5" },//Q4 = 5개
     { questionUid: "Q5", exampleUid: "E1" },
     { questionUid: "Q5", exampleUid: "E2" },
-    { questionUid: "Q5", exampleUid: "E3" }
+    { questionUid: "Q5", exampleUid: "E3" } //Q5 = 3개
 ];
-
 //이대로 뽑아내면 순서가 뒤죽박죽이라 orders를 기준으로 정렬
-question_list.sort((a,b) => a['orders']-b['orders']);
-example_list.sort((a,b) => a['orders']-b['orders']);
-        
-// ====================처리부분=======================================
-function question(i) { //설문 문항
-    console.log(`${question_list[i]['orders']}. ${question_list[i]['questions']}`);    
+
+//====================처리부분=======================================
+//1.뒤죽박죽되어있는것을 sort로 재정렬해준다.
+//https://www.w3schools.com/js/js_array_sort.asp 참고
+question_list.sort(function(a,b){return a['orders'] - b['orders']});
+example_list.sort(function(a,b){return a['orders'] - b['orders']});
+
+//2.function을 만들어 각각의 항목을 소환?할 수 있도록 한다. 
+//https://curryyou.tistory.com/185 참고
+function question(i){
+    console.log(`${question_list[i]['orders']}. ${question_list[i]['questions']}`);
 }
+
 
 function example(... args) { //보기 항목
     args.forEach(arg => {
-        str += `(${example_list[arg]['orders']}) ${example_list[arg]['example']} `;
+    str += `(${example_list[arg]['orders']}) ${example_list[arg]['example']} `;
     })
     console.log(str);
     console.log("");
     str= "";
 }
 
-function answer(i) {  //응답 항목
-   console.log(`답) (${input[i]})`);
+
+
+function answer(i){    
+    console.log(`답) (${input[i]})`);
+   
 }
 
+//3. 질문사항을 뽑을 출력부분 
 //====================출력 부분==========================================
 for(let i = 0 ; i<question_list.length; i++) {
     question(i);
     switch(i) {
-            case 0:  
+            case 0:
                 example(0,1,2);
                 answer(i);
               break;
@@ -96,9 +106,6 @@ for(let i = 0 ; i<question_list.length; i++) {
                 break;
             }       
 }
-
-   
-
 
 console.log("====================설문자 선택 =======================================");
 
