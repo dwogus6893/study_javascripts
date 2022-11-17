@@ -47,9 +47,37 @@ function userAnswer(i) { // 유저 답변
 
 
 // ====================출력부분=======================================
-for(let i =0; i<question_list.length;i++){
-    if(question_list[i] == question_list[0]){
-    console.log(question_list[i].questions);
-    userAnswer;
+for(let i = 0 ; i<answer_list.length; i++) {
+    question(i);
+    switch(i) {
+            case 0:  
+            answer_list(0,1,2);
+                userAnswer(i);
+              break;
+            case 1:
+                answer_list(0,1,2,3);
+                userAnswer(i);
+                break;
+            case 2:
+                answer_list(0,1);
+                userAnswer(i);
+                 break;    
+            case 3:
+                answer_list(0,1,2,3,4);
+                userAnswer(i);
+                break;
+            case 4:
+                answer_list(0,1,2);
+                userAnswer(i);
+                break;
+            }       
 }
-}
+
+// console.log("--------------------- 설문자 선택 --------------------------");
+
+// for(let i = 0 ; i<surveyQuestions.length; i++) {
+//     surveyQuestion(i);
+//     userAnswer(i);
+// }
+
+// console.log("이용해주셔서 감사합니다!");
