@@ -62,22 +62,40 @@ function question(i){
     console.log(`${question_list[i]['orders']}. ${question_list[i]['questions']}`);
 }
 
-
-function example(... args) { //보기 항목
-    args.forEach(arg => {
-    str += `(${example_list[arg]['orders']}) ${example_list[arg]['example']} `;
-    })
-    console.log(str);
-    console.log("");
-    str= "";
-}
+//구현 못함~~
+function example(i) {
+    if( 호출을 example(0)하고
+        question_list.questions_uid=="Q1"이라면){
+        let total1에 answer_list.exampleUid 개수만큼
+        example_list.example을 순서대로 출력해라.
+    }
+    if( 호출을 example(1)하고
+        question_list.questions_uid=="Q2"이라면){
+        let total2에 answer_list.exampleUid 개수만큼
+        example_list.example을 순서대로 출력해라.
+    }
+    if( 호출을 example(2)하고
+        question_list.questions_uid=="Q3"이라면){
+        let total3에 answer_list.exampleUid 개수만큼
+        example_list.example을 순서대로 출력해라.
+    }
+    if( 호출을 example(3)하고
+        question_list.questions_uid=="Q4"이라면){
+        let total4에 answer_list.exampleUid 개수만큼
+        example_list.example을 순서대로 출력해라.
+    }
+    if( 호출을 example(4)하고 
+        question_list.questions_uid=="Q5"이라면){
+        let total5에 answer_list.exampleUid 개수만큼
+        example_list.example을 순서대로 출력해라.
+    }
+    }
 
 
 
 function answer(i){    
     console.log(`답) (${input[i]})`);
-   
-}
+ }
 
 //3. 질문사항을 뽑을 출력부분 
 //====================출력 부분==========================================
@@ -85,23 +103,23 @@ for(let i = 0 ; i<question_list.length; i++) {
     question(i);
     switch(i) {
             case 0:
-                example(0,1,2);
+                example(0);
                 answer(i);
               break;
             case 1:
-                example(0,1,2,3);
+                example(1);
                 answer(i);
                 break;
             case 2:
-                example(0,1);
+                example(2);
                 answer(i);
                  break;    
             case 3:
-                example(0,1,2,3,4);
+                example(3);
                 answer(i);
                 break;
             case 4:
-                example(0,1,2);
+                example(4);
                 answer(i);
                 break;
             }       
