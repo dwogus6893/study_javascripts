@@ -32,10 +32,13 @@ bodys.forEach((element) => console.log(element));
 // .list 출력하기
 let lists = document.querySelectorAll(".list");
 lists.forEach((list) => console.log(list));
-// .item 출력하기
-let Items = document.querySelectorAll(".items");
-Items.forEach((items) => console.log(list));
 
+// .item은 나눠서 출력,foreach는 배열만가능 고로 element로 출력
+let Items1 = lists[0].querySelectorAll(".item");
+Items1.forEach((element) => console.log(`Items1: ${element}`));
+
+let Items2 = lists[1].querySelectorAll(".item");
+Items2.forEach((element) => console.log(`Items1: ${element}`));
 </script>
 </body>
 </html>
