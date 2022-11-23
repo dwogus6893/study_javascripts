@@ -28,3 +28,13 @@ productsData.forEach((element,index) => {
     insert += `<div>title: ${element["title"]} weight: ${element["weight"]}</div>`;
     });
     queryList.innerHTML = insert;
+
+
+    // ㅡㅡ추가사항
+    // let Lists = document.querySelector("#list");
+
+    // let p_data2;
+    // productsData.forEach((element) => {
+    //     p_data2 = `<div id="list"> ${element["title"]} : ${element["weight"]} </div>`;
+    //     Lists.ATTRIBUTE_NODE;
+    // })
