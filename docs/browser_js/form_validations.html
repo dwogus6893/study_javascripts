@@ -6,17 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<!-- form태그를 싸면 특정 submit 이벤트 발생시켯을때 -->
 <body>
-    <h3>JavaScript Validation</h3>
+    <h3 onclick="">JavaScript Validation</h3>
 
+
+    
     <form name="myForm" action="./index.html" onsubmit="return validateForm()" method="post">
         <div>
-            Name: <input type="text" name="fname">
+            *Name: <input type="text" name="fname" id="fnameId" >
             <input type="submit" value="Submit">
+            <button type ="submit">button Submit</button>
         </div>
         <div id="fnameErrorId"></div>
     </form>
+    <hr>
 
+    <!-- <form name="formPW" action="./index.html" method="get"> -->
+        <div>
+            *password: <input type="text" name="password" required>
+            <input type="submit" value="Submit">
+        </div>        
+    </form>
+
+    <hr>
+    <!-- <form name="search" action="./index.html" onsubmit="return validateForm()" method="post">-->
+        <div>
+            <div>Number between 1 and 10</div>
+            <div>
+            *Search: <input type="text" name="search" id="searchId" >
+            <button id="btensearch">Search</button>
+            <!-- <input type="submit" value="Submit"> -->
+                </div>
+                <div id="searchErrorId"></div>
+        </div>
+            <div id="searchDescId"></div>
+    </form>
+    
  <script src="./js/form_validations.js"></script>
 </body>
 </html>
