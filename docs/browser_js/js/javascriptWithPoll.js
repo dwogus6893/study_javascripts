@@ -1,122 +1,129 @@
-//기본 값 입력
-const questions = [
+const questions_list = [
   {
-    Qnum: "1",
-    Q: "교수는 수업 전 강의 목표를 명확히 제시하였습니까?",
+    question: "해당 매장을 방문시 매장은 청결 하였습니까?",
     questions_uid: "Q1",
+    order: 1,
   },
   {
-    Qnum: "2",
-    Q: "강의의 내용은 체계적이고 성의있게 구성되었는가?",
+    question: "주문시 직원은 고객님께 친절 하였습니까?",
     questions_uid: "Q2",
+    order: 2,
   },
   {
-    Qnum: "3",
-    Q: "교수는 강의 내용에 대해 전문적 지식이 있었는가?",
-    questions_uid: "Q3"
+    question: "주문하신 음료가 나오기까지 시간이 적당하였습니까?",
+    questions_uid: "Q3",
+    order: 3,
   },
   {
-    Qnum: "4",
-    Q: "강의 진행 속도는 적절하였는가?",
+    question: "해당 매장을 다음에도 재방문 하실 의향이 있으십니까?",
+    questions_uid: "Q5",
+    order: 4,
+  },
+  {
+    question: "직원이 제조한 음료에 대해 맛은 좋았습니까?",
     questions_uid: "Q4",
+    order: 5,
   },
 ];
 
-const example_list = [
-  {example: "전혀 아니다", example_uid: "E1", order: 1 },
-  {example: "아니다", example_uid: "E2", order: 2 },
-  {example: "보통이다", example_uid: "E3", order: 3 },
-  {example: "그렇다", example_uid: "E4", order: 4 },
-  {example: "매우 그렇다", example_uid: "E5", order: 5 },
+const answer_list = [
+  { answer: "전혀 아니다", answer_uid: "E1", order: 1 },
+  { answer: "아니다", answer_uid: "E2", order: 2 },
+  { answer: "보통이다", answer_uid: "E3", order: 3 },
+  { answer: "그렇다", answer_uid: "E4", order: 4 },
+  { answer: "매우 그렇다", answer_uid: "E5", order: 5 },
 ];
 
-const answers = [
-  { questions_uid: "Q1", example_uid: "E1" },
-  { questions_uid: "Q1", example_uid: "E2" },
-  { questions_uid: "Q1", example_uid: "E3" },
-  { questions_uid: "Q2", example_uid: "E1" },
-  { questions_uid: "Q2", example_uid: "E2" },
-  { questions_uid: "Q3", example_uid: "E1" },
-  { questions_uid: "Q3", example_uid: "E2" },
-  { questions_uid: "Q3", example_uid: "E3" },
-  { questions_uid: "Q3", example_uid: "E4" },
-  { questions_uid: "Q3", example_uid: "E5" },
-  { questions_uid: "Q4", example_uid: "E1" },
-  { questions_uid: "Q4", example_uid: "E2" },
-  { questions_uid: "Q4", example_uid: "E3" },
+const questions_answers = [
+  { questions_uid: "Q1", answer_uid: "E1" },
+  { questions_uid: "Q1", answer_uid: "E2" },
+  //   { questions_uid: "Q1", answer_uid: "E3" },
+  { questions_uid: "Q2", answer_uid: "E1" },
+  { questions_uid: "Q2", answer_uid: "E2" },
+  { questions_uid: "Q2", answer_uid: "E3" },
+  //   { questions_uid: "Q2", answer_uid: "E4" },
+  { questions_uid: "Q3", answer_uid: "E1" },
+  { questions_uid: "Q3", answer_uid: "E2" },
+  { questions_uid: "Q4", answer_uid: "E1" },
+  { questions_uid: "Q4", answer_uid: "E2" },
+  { questions_uid: "Q4", answer_uid: "E3" },
+  { questions_uid: "Q4", answer_uid: "E4" },
+  { questions_uid: "Q4", answer_uid: "E5" },
+  { questions_uid: "Q5", answer_uid: "E1" },
+  { questions_uid: "Q5", answer_uid: "E2" },
+  { questions_uid: "Q5", answer_uid: "E3" },
 ];
-
-let user_answers = [
-  {questions_uid: "Q1", user_answer:""},
-  {questions_uid: "Q2", user_answer:""},
-  {questions_uid: "Q3", user_answer:""},
-  {questions_uid: "Q4", user_answer:""},
-];
-
-////////Prev, next 기능을 사용할 수 있게 변수 선언
-let checkPage = 1;
-let queryPrevButton = document.querySelector("#prev"); // #쓰는이유 id를 선택하기 위해.
-let queryNextButton = document.querySelector("#next"); 
-queryPrevButton.addEventListener("click", prev);
-queryNextButton.addEventListener("click", next);
-let checkArea = document.querySelector("#checkArea");
-
-function prev(){
-  if(checkPage == 1){
-    alert("없는 페이지입니다.");
-  } else {
-    checkPage--;
-    
-    printQuestion(
-      questions[checkPage - 1]["Qnum"],
-      questions[checkPage - 1]["Q"]
-    );
-    checkArea.innerHTML ="";
-    printAnswer(questions[checkPage - 1]);
-  }
-}
-
-function next(){
-  if(checkPage == questions.length) {
-    alert("마지막 페이지입니다.");
-  }else {
-    checkPage++;
-    printQuestion(
-      questions[checkPage - 1]["Qnum"],
-      questions[checkPage - 1]["Q"]
-    );
-    checkArea.innerHTML = "";
-    printAnswer(questions[checkPage - 1]);
-  }
-}
-
-function printQuestion(qnum, nextContents){
-  let contents = document.querySelector(".contents");
-  contents.innerHTML = qnum + ". " + nextContents;
-}
-
-function printAnswer(Anum){
-  answer.innerHTML = printAnswer(Anum); //string 리턴하는 function
-}
-
-function printAnswer(Anum){
- let result;
- answers.forEach((element1) => {
-    if(element1["questions_uid"] == Anum["questions_uid"]){
-      example_list.forEach((element2) => {
-        if(element2["example_uid"] == element1["example_uid"]) {
-          checkArea.innerHTML += `<div class="check">
-          <input
-           class="checkAnswer"
-           type="radio"
-           name="answer"
-           id="answer"
-           value="E${element2.order}"
-           />
-           <label class="answerLabel" for="answer" > (${element2.order}) ${element2.example} </label>
-           </div>`;
-        }
-      });
+// 예상 묶음 데이터
+// [
+//  [Q1, E1, E2]      -> {questions_uid:Q1, answer_uids:[E1, E2]}
+//  [Q2, E1, E2, E3]  -> {questions_uid:Q2, answer_uids:[E1, E2, E3]}
+//  [Q3, E1, E2]      -> {questions_uid:Q3, answer_uids:[E1, E2]}
+//  [Q4, E1, E2, E3, E4, E5]  -> {questions_uid:Q4, answer_uids:[E1, E2, E3, E4, E5]}
+//  [Q5, E1, E2, E3]  -> {questions_uid:Q5, answer_uids:[E1, E2, E3]}
+// ]
+// 1차 방식 : [Q1, Q2, Q3, Q4, Q5]
+// 2차 방식 : Array in Array [[Q1, E1, E2], [Q2, E1, E2, E3] ...]]
+// 3차 방식 : Object in Array [{questions_uid:Q1, answer_uids:[E1, E2]}, ...]
+let polls = []; // 전체 묶음
+let question_compare;
+let questions = {}; // 내부 묶음
+let answer_uids = []; // 내부 설문 답변 묶음
+for (let idx = 0; idx < questions_answers.length; idx++) {
+  if (question_compare != questions_answers[idx]["questions_uid"]) {
+    if (Object.keys(questions).length > 0) {
+      questions["answer_uids"] = answer_uids;
+      polls.push(questions);
+      questions = {};
+      answer_uids = [];
     }
- });
+
+    // console.log(`!= : ${questions_answers[idx]["questions_uid"]}`);
+    // console.log(`!= : ${questions_answers[idx]["answer_uid"]}`);
+    questions["questions_uid"] = questions_answers[idx]["questions_uid"];
+    answer_uids.push(questions_answers[idx]["answer_uid"]);
+  } else {
+    // console.log(`== : ${questions_answers[idx]["answer_uid"]}`);
+    answer_uids.push(questions_answers[idx]["answer_uid"]);
+    if (idx + 1 >= questions_answers.length) {
+      questions["answer_uids"] = answer_uids;
+      polls.push(questions);
+    }
+  }
+  question_compare = questions_answers[idx]["questions_uid"]; // 이전 uid 입력
+}
+// console.log(`${polls}`); //
+
+// 출력
+// [
+//  {questions_uid:Q1, answer_uids:[E1, E2]},
+//  {questions_uid:Q2, answer_uids:[E1, E2, E3]},
+//  ...]
+// polls[0]['questions_uid']
+// polls[0]['answer_uids'][0]
+// polls[0]['answer_uids'][1]
+
+// polls[1]['questions_uid']
+// polls[1]['answer_uids'][0]
+// polls[1]['answer_uids'][1]
+// polls[1]['answer_uids'][2]
+
+// 설문 문항을 가져오는 function
+// Q1. 해당 매장을 방문시 매장은 청결 하였습니까?
+// 1. E1
+// 2. E2
+// Q2. 주문시 직원은 고객님께 친절 하였습니까?
+// ...
+
+function getQuestionByUid(question_uid) {
+  // ...
+  return question_desc;
+}
+
+for (poll of polls) {
+  console.log(`${poll["questions_uid"]}`); // == polls[idx]
+  let answer_uids = poll["answer_uids"];
+  answer_uids.forEach((answer_uid, index) => {
+    // answers
+    console.log(`${index + 1}. ${answer_uid}`);
+  });
 }
