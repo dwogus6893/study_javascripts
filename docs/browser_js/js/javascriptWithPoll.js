@@ -65,7 +65,7 @@ const questions_answers = [
 // 1차 방식 : [Q1, Q2, Q3, Q4, Q5]
 // 2차 방식 : Array in Array [[Q1,E1,E2],[Q2,E1,E2,E3]...]
 // 3차 방식 : Object in Array [{questions_uid:Q1, answer_uids:[E1,E2], answer:Q2}]
-let polls = [];
+let polls = []; //전체 묶음
 let question_compare;
 let questions = {}; // 내부 묶음
 let answer_uids = []; // 내부 설문 답변 묶음
@@ -118,7 +118,7 @@ for (let idx = 0; idx < questions_answers.length; idx++) {
 // ...
 function getQuestionByUid(question_uid) {
   // 질문항을 반환
-  let question_desc = "question not found"; // 매칭되는 값을 찾지 못할 경우라 가정하고 리턴값 초기화
+  let question_desc = ""; // 매칭되는 값을 찾지 못할 경우라 가정하고 리턴값 초기화
   for (let i = 0; i < questions_list.length; i++) {
     // 배열을 돌면서 매칭되는 값을 찾는다.
     if (questions_list[i]["questions_uid"] == question_uid) {
