@@ -3,10 +3,5 @@ querySingle.addEventListener("click", (event)=>{
     singleEvent(event);
 });
 
-
-//querySingle.addEventListener("double-click", singleEvent);
-
-function singleEvent() {
-    console.log(event);
-    querySingle.innerHTML = "Take One Event!";
-}
+document.getElementById("id명").style.display;
+document.getElementById("id").style.visibility="hidden";
