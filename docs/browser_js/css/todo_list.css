@@ -1,0 +1,83 @@
+* {
+    margin: 3px;
+    padding: 0;   
+}
+
+ul {
+    list-style-type: none;
+    padding: 0 1rem 0 1rem;
+  }
+  
+  li {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 0.8rem;
+    margin: 10px auto;
+  }
+
+.delete:hover,
+.thumb_up:hover,
+#addBtn:hover {
+  cursor: pointer;
+}
+
+
+header{
+    color: white;
+    background-color: blueviolet ;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#input_text {
+    width: 75%;
+    border-radius: 0.3rem;
+    padding: 0.8rem;
+    border: 1px solid gray;
+  }
+
+
+#input_text{
+    width : 80%;
+    height : 80px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 0.3px;
+    font-size:1.8em;
+}
+
+#addBtn {
+    width: 15%;
+    border-radius: 0.3rem;
+    padding: 0.8rem;
+    margin: 0.1rem;
+    border: none;
+    color: white;
+    background-color: blueviolet;
+    font-weight: 700;
+  }
+ 
+/* Add버튼에 효과넣기 */
+#addBtn:hover{
+    cursor:pointer;
+    background-color: blueviolet;
+    color:white;
+}
+
+.todoList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: right;
+    font-size: 1.2rem;
+  }
+  
+  .favorite_border {
+    color: hotpink;
+  }
+  
+  .delete {
+    color: hotpink;
+  }

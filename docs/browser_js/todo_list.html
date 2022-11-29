@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 구글 웹아이콘 연결 -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/todo_list.css">
+</head>
+<body>
+    <!-- span : 문장 단위로 텍스트 영역을 지정하는것 -->
+    <!-- wrapper : 단일 요소의 레이아웃을 위한 div -->
+    <!-- placeholder : 사용자가 적절한 값을 입력할 수 있도록 도와주는 짧은 도움말을 명시 -->
+    <!-- section: HTML 문서에 포함된 독립적인 섹션을 정의할 때 사용 -->
+    <div class ="wrapper">
+<header>
+    <h1>To Do List</h1>
+</header>
+    <div class="first_container">
+        <input type="text" id="input_text" placeholder="Add a new task" />
+        <button id="addBtn">Add</button>
+    </div>
+   
+    <div>
+        <ul id="items">
+            <!-- <li>
+            <div class="todolist">
+            <div class="todoContent">DB 설계서</div>
+            <div class="button">
+            <div class="favorite_border">
+            <i class="material-icons">favorite</i>
+            </div>
+            <div class="delete">
+            <i class="material-icons">delete</i>
+            </div>
+            </div>
+            </div>
+            </li> -->
+         </ul>
+</div>
+<script src="./js/todo_list.js"></script>
+</body>
+</html>
