@@ -8,7 +8,7 @@ Addbutton.addEventListener("click",(event) => {
 });
 
 inputtext.addEventListener("keydown",(event) => {
-    if(event.code =="Enter"){
+    if(event.key == "Enter"){
         additem(event);
     }
 });
