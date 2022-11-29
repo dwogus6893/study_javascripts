@@ -2,3 +2,8 @@
     border: 1px solid gray;
     padding: 0.1rem;
 }
+
+/* 손모양으로 변경 */
+.delete:hover{ 
+    cursor:pointer;
+}

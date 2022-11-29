@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>기본 표 형식</h1>
+    <table border ="1"> 
+        <caption> <!--caption보다 위:부모, 아래:자식-->
+            <b>라면 종류</b>
+        </caption> <!--테이블 설명 글-->
+        <tr>
+            <th>이름</th>
+            <th>제조사</th>
+            <th>매운정도(순함/매움)</th>
+        </tr>
+        <tr>
+            <td>너구리</td>
+            <td>농심</td>
+            <td>순한맛</td>
+        </tr>
+        <tr>
+            <td>삼양라면</td>
+            <td>삼양</td>
+            <td>순한맛</td>
+        </tr>
+        <tr>
+            <td>꼬꼬면</td>
+            <td>팔도</td>
+            <td>순한맛</td>
+        </tr>
+        </table>
+
+        <!--
+            table 태그 : 웹 문서 상의 표를 나타내는 태그
+            <table>
+                <tr></tr> : 표의 한 행을 의미
+                <tr></tr> : 표의 첫 행
+                <tr></tr> : 행 안의 각 내용(컬럼)
+            </table>
+        -->
+
+        <!-- h1{표의 행,열 합치기} -->
+        <h1>표의 행, 열 합치기</h1>
+        
+        <h3>회원가입 양식</h3>
+
+        <table border="1">
+            <tr>
+                <td width="70px" 
+                align="center"
+                rowspan="3">사진</td>
+                <td width="80px">이름</td>
+                <td width="200px"></td>
+            </tr>
+            <tr>
+                <td>연락처</td>
+                <td></td>
+            </tr>
+            <!--tr>td*3-->
+            <tr>                
+                <td>주소</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td height="100px">자기소개</td>
+                <td colspan="2"></td>
+            </tr>
+        </table>
+
+        <h1>실습</h1>
+        <h3>오늘 기준 누적 확진자 표 만들기</h3>
+        <table border="1">
+            <caption>
+                누적 확진자 현황(3.9 00시 기준)
+            </caption>
+            <tr>
+                <th colspan="4">확진환자</th>
+            </tr>
+            <tr align="center">
+                <td><b>누적</b></td>
+                <td colspan="3"><b>전일대비</b></td>
+            </tr>
+            <tr>    
+                <td rowspan="2">93,263</td>
+                <td style="color:blue">소계</td>
+                <td style="color:blue">국내발생</td>
+                <td style="color:blue">해외유입</td>
+            </tr>
+            <tr>
+                <td style="color:red;">+ 446</td>
+                <td style="color:red;">427</td>
+                <td style="color:red;">19</td>
+            </tr>
+        </table>
+
+        <h1>테이블 구조 태그</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>나이</th>
+                    <th>취미</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--(tr>td*3)*3-->
+                <tr>
+                    <td>홍길동</td>
+                    <td>10</td>
+                    <td>독서</td>
+                </tr>
+                <tr>
+                    <td>고길동</td>
+                    <td>15</td>
+                    <td>부동산</td>
+                </tr>
+                <tr>
+                    <td>김유신</td>
+                    <td>20</td>
+                    <td>주식투자</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>총 인원</td>
+                    <td colspan="2"> 3명</td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+
+
+</body>
+</html>
