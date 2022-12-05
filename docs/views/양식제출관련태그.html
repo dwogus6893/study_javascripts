@@ -117,9 +117,57 @@
     <button type="button"> 
         <img src="../views/홀리 화면.png" width="200px" alt="">
     </button>
+    <hr>
+    <h3>기타 입력 양식 태그들</h3>
 
+    <h4>select와 option 태그</h4>
 
-<body>
+    이메일 작성 : <input type="text" size="5">
+                  <select name="email">
+                  <!-- option은 겉에보일 내용 -->
+                  <option value="@gmail.com">구글 메일</option>
+                  <option value="@hanmir.com">한미르</option>
+                  <option value="@lycos.com">라이코스</option>
+                  <option value="@empas.com">엠파스</option>
+                  <option value="@paran.com">파란</option>
+                  <option value="@yahoo.com">야후</option>
+                  <option value="@dreamwiz.com">드림위즈</option>
+                  </select>
+            <h4>select 다중 선택</h4>
+
+            <select name="homefood" size="3" multiple>
+                <option value="아폴로">아폴로</option>
+                <option value="꾀돌이">꾀돌이</option>
+                <option value="차카니">차카니</option>
+                <option value="팽돌이">팽돌이</option>
+                <option value="쫀드기">쫀드기</option>
+             </select>
+
+             <h4>input과 datalist 태그</h4>
+            선호 음식 : <input type="text" list="foods">
+
+            <datalist id="foods">
+                <option value="짜장면">짜장면</option>
+                <option value="닭볶음탕">닭볶음탕</option>
+                <option value="피자">피자</option>
+                <option value="텐동">텐동</option>
+                <option value="마제소바">마제소바</option>
+            </datalist>
+
+            <hr>
+            
+            <h3>textarea 태그</h3>
+            comment : <br>
+            <textarea name="content" id="" cols="50" rows="5"
+                        style="resize:none;"></textarea>
+
+            <br><br>
+            <h4>썸머노트 테스트</h4>
+            <textarea id="summernote"></textarea>
+            <script>
+                $('#summernote').summernote();
+            </script>
+            <body>
     
 </body>
 </html>
