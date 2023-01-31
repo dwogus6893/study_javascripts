@@ -19,6 +19,9 @@
       <li>item second</li>
       <li>item third</li>
    </ol>
+   <button id="btn_before_html">Before html</button>
+   <button id="btn_after_html">After html</button>
+
    <button id="btn_append_html">Prepend html</button>
 
    <button id="btn_append_text">Append text</button>
@@ -28,7 +31,12 @@
       // $(document).ready(function(){
       $(function(){
         //prepend
-        
+        $('#btn_before_html').click(function(){
+            $('#ol_adds').before('<li>before div</li>')
+        });
+        $('#btn_after_html').click(function(){
+            $('#ol_adds').prepend('<li>after div</li>')
+        });
 
         //append
         $('#btn_append_text').click(function(){
